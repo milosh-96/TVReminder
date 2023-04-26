@@ -1,0 +1,37 @@
+﻿@page
+@model TVReminder.Web.Pages.Channels.CreateModel
+@{
+}
+
+
+<div>
+    <h2>Channel</h2>
+
+    <form method="post">
+
+        @Html.DisplayFor(m => m.Data.Name)
+        @Html.Input(m => m.Data.Name)
+      
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+
+    </form>
+
+
+    <hr />
+    @if(Model.RandomNumber < 0)
+    {
+        <p>something wrong</p>
+    }
+    else
+    {
+        <p>ok - @Model.RandomNumber</p>
+    }
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

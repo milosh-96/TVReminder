@@ -1,0 +1,16 @@
+﻿@page
+@model TVReminder.Web.Pages.Channels.IndexModel
+@{
+}
+<div>
+    <h2>List of Channels</h2>
+
+    <ul class="list-group">
+        @foreach (var item in Model.Data)
+        {
+         <li class="list-group-item">
+                <a asp-page="Details" asp-route-id="@item.Id">@item.Name</a>
+         </li>
+        }
+    </ul>
+</div>
